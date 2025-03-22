@@ -39,7 +39,7 @@ const ContactSection = () => {
       <div className="contact-container">
         <div className="contact-info">
           <div className="info-item">
-            <i className="icon-location"></i>
+            <i className="fas fa-map-marker-alt"></i>
             <div>
               <h3>Office Address</h3>
               <p>123 Legal Street, Suite 100</p>
@@ -47,21 +47,21 @@ const ContactSection = () => {
             </div>
           </div>
           <div className="info-item">
-            <i className="icon-phone"></i>
+            <i className="fas fa-phone"></i>
             <div>
               <h3>Phone</h3>
               <p>(555) 555-5555</p>
             </div>
           </div>
           <div className="info-item">
-            <i className="icon-email"></i>
+            <i className="fas fa-envelope"></i>
             <div>
               <h3>Email</h3>
               <p>contact@shanehobbslaw.com</p>
             </div>
           </div>
           <div className="info-item">
-            <i className="icon-clock"></i>
+            <i className="fas fa-clock"></i>
             <div>
               <h3>Office Hours</h3>
               <p>Monday - Friday: 9:00 AM - 5:00 PM</p>

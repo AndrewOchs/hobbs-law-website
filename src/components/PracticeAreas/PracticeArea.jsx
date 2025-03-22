@@ -6,19 +6,19 @@ const practiceAreas = [
     id: 1,
     title: "Criminal Defense",
     description: "Aggressive defense against all criminal charges, from misdemeanors to felonies.",
-    icon: "scale-balance"
+    icon: "balance-scale"
   },
   {
     id: 2,
     title: "Family Law",
     description: "Compassionate representation for divorce, custody, and other family matters.",
-    icon: "family"
+    icon: "users"
   },
   {
     id: 3,
     title: "Personal Injury",
     description: "Fighting for fair compensation for injuries caused by negligence.",
-    icon: "bandage"
+    icon: "first-aid"
   }
   // Add more practice areas based on their actual services
 ];
@@ -34,7 +34,7 @@ const PracticeAreas = () => {
         {practiceAreas.map(area => (
           <div key={area.id} className="practice-card">
             <div className="practice-icon">
-              <i className={`icon-${area.icon}`}></i>
+              <i className={`fas fa-${area.icon}`}></i>
             </div>
             <h3>{area.title}</h3>
             <p>{area.description}</p>

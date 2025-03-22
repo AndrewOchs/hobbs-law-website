@@ -1,63 +1,92 @@
-.attorney-profile {
-    background-color: white;
+.testimonials {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.testimonial-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.slider-arrow {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #003366;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.slider-arrow:hover {
+  color: #0056b3;
+}
+
+.testimonial-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin: 0 20px;
+  position: relative;
+  flex-grow: 1;
+}
+
+.quote-mark {
+  font-size: 5rem;
+  color: rgba(0, 51, 102, 0.1);
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-family: 'Georgia', serif;
+}
+
+.testimonial-text {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.testimonial-client {
+  font-weight: 600;
+  color: #003366;
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: #003366;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 30px 20px;
   }
   
-  .profile-container {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    gap: 50px;
-    align-items: center;
-  }
-  
-  .profile-image {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .profile-image img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .profile-content {
-    flex: 2;
-  }
-  
-  .profile-content h2 {
-    color: #003366;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .profile-content h3 {
-    color: #666;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    font-weight: 400;
-  }
-  
-  .profile-content p {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-    line-height: 1.8;
-  }
-  
-  .credentials {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
-  }
-  
-  .credential-item h4 {
-    color: #003366;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-  }
-  
-  .credential-item p {
-    margin-bottom: 5px;
+  .testimonial-text {
     font-size: 1rem;
   }
+}

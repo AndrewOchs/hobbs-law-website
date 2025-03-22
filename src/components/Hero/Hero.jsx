@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-scroll';
 import './Hero.css';
 
 const Hero = () => {
@@ -10,12 +9,12 @@ const Hero = () => {
         <h1>Experienced Legal Counsel You Can Trust</h1>
         <p>Dedicated to protecting your rights and fighting for the justice you deserve</p>
         <div className="hero-buttons">
-          <Link to="contact" smooth={true} duration={500} className="btn primary-btn">
+          <a href="#contact" className="btn primary-btn">
             Free Consultation
-          </Link>
-          <Link to="practice" smooth={true} duration={500} className="btn secondary-btn">
+          </a>
+          <a href="#practice" className="btn secondary-btn">
             Our Services
-          </Link>
+          </a>
         </div>
       </div>
     </section>
