@@ -1,249 +1,101 @@
-/* Basic reset and font settings */
+/* Global styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #333;
-  }
-  
-  .app {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Navbar styles */
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 15px 0;
-    z-index: 1000;
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .logo h1 {
-    font-size: 1.5rem;
-    color: #003366;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links a {
-    color: #003366;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-  }
-  
-  .nav-links a:hover {
-    color: #0056b3;
-  }
-  
-  .contact-info a {
-    color: #003366;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  
-  /* Hero section styles */
-  .hero {
-    height: 80vh;
-    background-color: #002244;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 70px;
-    color: white;
-    text-align: center;
-  }
-  
-  .hero-content {
-    max-width: 800px;
-    padding: 0 20px;
-    z-index: 2;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-  }
-  
-  .hero-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-  }
-  
-  .btn {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-  }
-  
-  .primary-btn {
-    background-color: #003366;
-    color: white;
-  }
-  
-  .primary-btn:hover {
-    background-color: #002244;
-  }
-  
-  .secondary-btn {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-  }
-  
-  .secondary-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  /* Section styles */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Common section styles */
+section {
+  padding: 80px 0;
+}
+
+/* Global button styles */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background-color: #003366;
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #002244;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: #003366;
+  border: 2px solid #003366;
+}
+
+.secondary-btn:hover {
+  background-color: rgba(0, 51, 102, 0.1);
+}
+
+/* Common section header styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   section {
     padding: 60px 0;
   }
   
   .section-header {
-    text-align: center;
     margin-bottom: 40px;
   }
   
   .section-header h2 {
     font-size: 2rem;
-    color: #003366;
-    margin-bottom: 10px;
   }
   
   .section-header p {
-    color: #666;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: 1.8rem;
   }
   
-  /* Practice areas styles */
-  .practice-areas {
-    background-color: #f8f9fa;
+  .btn {
+    padding: 10px 20px;
   }
-  
-  .practice-areas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .practice-card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    transition: transform 0.3s;
-  }
-  
-  .practice-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .practice-icon {
-    width: 70px;
-    height: 70px;
-    background-color: rgba(0, 51, 102, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-  }
-  
-  .practice-icon i {
-    font-size: 28px;
-    color: #003366;
-  }
-  
-  .practice-card h3 {
-    color: #003366;
-    margin-bottom: 15px;
-  }
-  
-  .practice-card p {
-    margin-bottom: 20px;
-  }
-  
-  .learn-more {
-    color: #003366;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  /* Attorney profile styles */
-  .attorney-profile {
-    background-color: white;
-  }
-  
-  /* Footer styles */
-  .footer {
-    background-color: #002244;
-    color: white;
-    padding: 20px 0;
-    margin-top: auto;
-  }
-  
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .navbar-container {
-      flex-direction: column;
-      gap: 15px;
-    }
-    
-    .nav-links {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
-    .hero-content h1 {
-      font-size: 2rem;
-    }
-    
-    .hero-buttons {
-      flex-direction: column;
-    }
-  }
+}
