@@ -39,9 +39,8 @@
 
 .nav-links {
   display: flex;
-  gap: 2.5rem;
+  gap: 3rem;
   margin-left: auto;
-  margin-right: 2rem;
 }
 
 .nav-links a {
@@ -84,19 +83,6 @@
   background-color: #0056b3;
 }
 
-.contact-info {
-  display: flex;
-  align-items: center;
-}
-
-.contact-info a {
-  color: #0c2c59;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1rem;
-  white-space: nowrap;
-}
-
 /* Responsive styles */
 @media (max-width: 992px) {
   .navbar-container {
@@ -123,11 +109,7 @@
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem 1.5rem;
-    margin: 0 0 1rem 0;
-  }
-  
-  .contact-info {
-    margin-top: 0.5rem;
+    gap: 1.5rem 2rem;
+    margin: 0.5rem 0;
   }
 }
