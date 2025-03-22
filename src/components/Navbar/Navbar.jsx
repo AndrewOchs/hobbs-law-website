@@ -4,6 +4,7 @@ import './Navbar.css';
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('home');
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -24,8 +25,17 @@ const Navbar = () => {
       });
     };
     
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
   
   const handleLinkClick = (id) => {
@@ -34,7 +44,7 @@ const Navbar = () => {
   };
   
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isMobile ? 'mobile' : ''}`}>
       <div className="navbar-container">
         <div className="logo">
           <h1>Shane Hobbs Law Office</h1>

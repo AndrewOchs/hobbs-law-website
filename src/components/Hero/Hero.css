@@ -84,7 +84,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 140px; /* Increased padding for mobile to account for taller navbar */
+    padding-top: 180px; /* Increased padding for mobile to account for taller navbar */
     height: 90vh; /* Adjusted height for mobile */
   }
   
@@ -108,6 +108,6 @@
   
   .hero {
     height: 85vh;
-    padding-top: 160px; /* Even more padding for very small screens */
+    padding-top: 200px;
   }
 }

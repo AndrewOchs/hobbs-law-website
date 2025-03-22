@@ -90,30 +90,39 @@
   }
   
   .nav-links {
-    gap: 1.5rem;
-    margin-right: 1.5rem;
+    gap: 2rem;
   }
 }
 
 @media (max-width: 768px) {
+  .navbar.mobile {
+    position: absolute;
+    background-color: white;
+  }
+  
   .navbar-container {
     flex-direction: column;
     height: auto;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
   }
   
   .logo {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.3rem;
   }
   
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem 2rem;
-    margin: 0.5rem 0;
+    gap: 1rem 1.5rem;
+    margin: 0.25rem 0 0.5rem 0;
   }
   
   .nav-links a {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    padding: 4px 0;
   }
 }
