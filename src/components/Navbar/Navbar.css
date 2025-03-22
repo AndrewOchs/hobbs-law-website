@@ -112,4 +112,8 @@
     gap: 1.5rem 2rem;
     margin: 0.5rem 0;
   }
+  
+  .nav-links a {
+    font-size: 0.9rem;
+  }
 }
