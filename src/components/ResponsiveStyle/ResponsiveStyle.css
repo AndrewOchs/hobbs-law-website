@@ -1,0 +1,126 @@
+@media (max-width: 1024px) {
+    .section-header h2 {
+      font-size: 2.2rem;
+    }
+    
+    .hero-content h1 {
+      font-size: 3rem;
+    }
+    
+    .profile-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .profile-image {
+      margin-bottom: 30px;
+    }
+    
+    .credentials {
+      justify-content: center;
+    }
+    
+    .contact-container {
+      flex-direction: column;
+    }
+    
+    .footer-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    
+    .footer-logo {
+      align-items: center;
+      text-align: center;
+    }
+    
+    .footer-links {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer-social {
+      text-align: center;
+    }
+    
+    .social-icons {
+      justify-content: center;
+    }
+    
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .nav-links {
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .practice-areas-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .testimonial-card {
+      padding: 30px 20px;
+    }
+    
+    .footer-links {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    section {
+      padding: 60px 0;
+    }
+    
+    .section-header {
+      margin-bottom: 40px;
+    }
+    
+    .section-header h2 {
+      font-size: 1.8rem;
+    }
+    
+    .hero {
+      height: 70vh;
+    }
+    
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+    
+    .profile-content h2 {
+      font-size: 2rem;
+    }
+    
+    .profile-content h3 {
+      font-size: 1.2rem;
+    }
+    
+    .testimonial-text {
+      font-size: 1rem;
+    }
+  }

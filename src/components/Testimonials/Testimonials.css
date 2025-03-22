@@ -1,0 +1,63 @@
+.attorney-profile {
+    background-color: white;
+  }
+  
+  .profile-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 50px;
+    align-items: center;
+  }
+  
+  .profile-image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .profile-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-content {
+    flex: 2;
+  }
+  
+  .profile-content h2 {
+    color: #003366;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .profile-content h3 {
+    color: #666;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+  
+  .profile-content p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  .credentials {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+  }
+  
+  .credential-item h4 {
+    color: #003366;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .credential-item p {
+    margin-bottom: 5px;
+    font-size: 1rem;
+  }
