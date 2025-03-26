@@ -49,20 +49,6 @@ const Navbar = () => {
     }
   }, [location]);
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest('.practice-dropdown')) {
-        setIsPracticeDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-  
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isMobile ? 'mobile' : ''}`}>
       <div className="navbar-container">
@@ -81,9 +67,15 @@ const Navbar = () => {
             onMouseEnter={() => setIsPracticeDropdownOpen(true)}
             onMouseLeave={() => setIsPracticeDropdownOpen(false)}
           >
-            <span>Practice Areas</span>
+            <div className="practice-dropdown-trigger">
+              <span>Practice Areas</span>
+              <span className="dropdown-arrow">▼</span>
+            </div>
             {isPracticeDropdownOpen && (
-              <div className="dropdown-menu">
+              <div 
+                className="dropdown-menu"
+                onMouseEnter={() => setIsPracticeDropdownOpen(true)}
+              >
                 <Link 
                   to="/municipal-law"
                   onClick={() => setIsPracticeDropdownOpen(false)}
@@ -91,34 +83,22 @@ const Navbar = () => {
                   Municipal Law
                 </Link>
                 <Link 
-                  to="/#small-business-law"
+                  to="/#criminal-defense"
                   onClick={() => setIsPracticeDropdownOpen(false)}
                 >
-                  Small Business Law
+                  Criminal Defense
                 </Link>
                 <Link 
-                  to="/#criminal-law"
+                  to="/#family-law"
                   onClick={() => setIsPracticeDropdownOpen(false)}
                 >
-                  Criminal Law
+                  Family Law
                 </Link>
                 <Link 
                   to="/#personal-injury"
                   onClick={() => setIsPracticeDropdownOpen(false)}
                 >
                   Personal Injury
-                </Link>
-                <Link 
-                  to="/#real-estate-law"
-                  onClick={() => setIsPracticeDropdownOpen(false)}
-                >
-                  Real Estate Law
-                </Link>
-                <Link 
-                  to="/#homeowner's-insurance-coverage"
-                  onClick={() => setIsPracticeDropdownOpen(false)}
-                >
-                  Homeowner's Insurance Coverage
                 </Link>
               </div>
             )}
