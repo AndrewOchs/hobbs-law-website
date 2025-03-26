@@ -1,0 +1,25 @@
+.consideration-item {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .consideration-item:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .consideration-item h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 15px;
+  }
+  
+  .consideration-item p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+  
