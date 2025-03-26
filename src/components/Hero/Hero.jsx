@@ -7,7 +7,7 @@ const Hero = () => {
       id="home" 
       className="hero"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/hero-background.jpg')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/hero_background.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
