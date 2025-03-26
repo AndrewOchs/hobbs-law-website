@@ -1,46 +1,59 @@
 .cta-box {
-    background-color: #003366;
-    border-radius: 8px;
-    padding: 40px;
-    color: white;
-    text-align: center;
-    margin-top: 40px;
+  background-color: #003366;
+  border-radius: 8px;
+  padding: 40px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cta-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.cta-box p {
+  color: white;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: white;
+  color: #003366;
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.cta-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .cta-box {
+    padding: 30px 20px;
   }
   
   .cta-box h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
   }
   
   .cta-box p {
-    color: white;
-    margin-bottom: 30px;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   .cta-button {
-    background-color: white;
-    color: #003366;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1rem;
   }
-  
-  .cta-button:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    transform: translateY(-2px);
-  }
-  
-  @media (max-width: 768px) {
-    .cta-box {
-      padding: 30px 20px;
-    }
-    
-    .cta-box h3 {
-      font-size: 1.5rem;
-    }
-  }
+}
