@@ -1,163 +1,129 @@
-/* Municipal Law Page Styles */
-
+/* Municipal Law Page Refined Styles */
 .municipal-law-page {
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  /* Practice Intro Section */
-  .practice-intro {
-    padding: 60px 0;
-    background-color: white;
-  }
-  
-  .practice-intro .lead {
-    font-size: 1.3rem;
-    color: #333;
-    margin-bottom: 25px;
-    line-height: 1.6;
-  }
-  
-  .practice-intro p {
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 20px;
-  }
-  
-  /* Areas Covered Section */
-  .areas-covered {
-    padding: 60px 0;
-    background-color: #f8f9fa;
-  }
-  
-  .areas-covered h2 {
-    color: #003366;
-    margin-bottom: 25px;
-    font-size: 2.2rem;
-    text-align: center;
-  }
-  
-  .areas-covered > p {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 1.1rem;
-  }
-  
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-  }
-  
-  /* Why Choose Us Section */
-  .why-choose {
-    padding: 60px 0;
-    background-color: white;
-  }
-  
-  .why-choose h2 {
-    color: #003366;
-    margin-bottom: 40px;
-    font-size: 2.2rem;
-    text-align: center;
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  color: #2c3e50;
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.section:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  color: #003366;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.section-header p {
+  color: #6c757d;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.section-content {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-title {
+  color: #003366;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.section-description {
+  color: #6c757d;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.services-grid,
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.approach-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.considerations-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .services-grid,
   .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* Municipal Law Approach Section */
-  .municipal-law-approach {
-    padding: 60px 0;
-    background-color: #f8f9fa;
-  }
-  
-  .municipal-law-approach h2 {
-    color: #003366;
-    margin-bottom: 40px;
-    font-size: 2.2rem;
-    text-align: center;
-  }
-  
-  .approach-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  
-  /* Key Considerations Section */
-  .key-considerations {
-    padding: 60px 0;
-    background-color: white;
-  }
-  
-  .key-considerations h2 {
-    color: #003366;
-    margin-bottom: 40px;
-    font-size: 2.2rem;
-    text-align: center;
-  }
-  
+
   .considerations-content {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    grid-template-columns: 1fr;
   }
-  
-  /* Client Commitment Section */
-  .client-commitment {
-    padding: 60px 0;
-    background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 0;
   }
-  
-  .client-commitment h2 {
-    color: #003366;
-    margin-bottom: 25px;
-    font-size: 2.2rem;
+
+  .section-header h2 {
+    font-size: 2rem;
   }
-  
-  .client-commitment p {
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 20px;
+
+  .services-grid,
+  .benefits-grid {
+    grid-template-columns: 1fr;
   }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 992px) {
-    .services-grid,
-    .benefits-grid {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    }
+
+  .section-title {
+    font-size: 2rem;
   }
-  
-  @media (max-width: 768px) {
-    .practice-intro .lead {
-      font-size: 1.2rem;
-    }
-    
-    .areas-covered h2,
-    .why-choose h2,
-    .municipal-law-approach h2,
-    .key-considerations h2,
-    .client-commitment h2 {
-      font-size: 2rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .services-grid,
-    .benefits-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .areas-covered h2,
-    .why-choose h2,
-    .municipal-law-approach h2,
-    .key-considerations h2,
-    .client-commitment h2 {
-      font-size: 1.8rem;
-    }
-  }
+}
+
+/* Additional subtle animations */
+.service-item,
+.benefit-item,
+.approach-step,
+.consideration-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover,
+.benefit-item:hover,
+.approach-step:hover,
+.consideration-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
