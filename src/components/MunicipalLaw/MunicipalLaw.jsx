@@ -1,67 +1,97 @@
 import React from 'react';
 import './MunicipalLaw.css';
 import PageHero from '../PageHero/PageHero';
+import CtaBox from '../CtaBox/CtaBox';
 
 const MunicipalLaw = () => {
+  const municipalEntities = [
+    'Authorities', 
+    'Boroughs', 
+    'Townships', 
+    'Zoning Hearing Boards'
+  ];
+
+  const municipalServices = [
+    'Advising in right-to-know law requests',
+    'Budget issues consultation',
+    'Arbitrations and contract negotiations',
+    'Drafting ordinances and resolutions',
+    'Land use and zoning issues',
+    'Personnel matters',
+    'Sunshine Act compliance',
+    'Property acquisition strategies',
+    'Public meeting representation',
+    'Eminent Domain',
+    'Municipal collections',
+    'Codes enforcement'
+  ];
+
   return (
     <div className="municipal-law-page">
       <PageHero
         title="Municipal Law"
-        subtitle="Comprehensive Legal Services for Local Governments"
+        subtitle="Comprehensive Legal Counsel for Local Governments"
         backgroundImage="/images/courthouse.jpg"
       />
 
       <div className="container municipal-law-content">
         <section className="intro-section">
-          <h2>Dedicated Municipal Legal Counsel</h2>
+          <h2>Navigating Complex Legal Issues for Municipalities</h2>
           <p>
-            Shane Hobbs Law Office provides comprehensive legal services to municipalities, 
-            offering strategic guidance and expert representation in all aspects of local government operations. 
-            Our approach combines deep legal expertise with a nuanced understanding of the complex challenges 
-            facing modern local governments.
+            With years of dedicated experience, Shane Hobbs Law Office has been a trusted legal partner 
+            for local government entities. Our municipal law practice is designed to provide thorough 
+            and practical legal advice to public officials facing diverse governmental challenges.
           </p>
         </section>
 
+        <section className="expertise-section">
+          <h2>Our Municipal Law Expertise</h2>
+          <p>
+            We understand the critical importance of staying current with the latest federal and state 
+            legal developments. Our attorneys are actively engaged with professional municipal associations 
+            and regularly attend state and local seminars to ensure our clients receive the most up-to-date 
+            and comprehensive legal guidance.
+          </p>
+        </section>
+
+        <section className="entities-section">
+          <h2>Municipalities We Serve</h2>
+          <div className="entities-grid">
+            {municipalEntities.map((entity, index) => (
+              <div key={index} className="entity-item">
+                {entity}
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section className="services-section">
-          <h2>Our Municipal Law Services</h2>
-          <div className="services-list">
-            <div className="service-item">
-              <h3>General Counsel Services</h3>
-              <p>
-                Ongoing legal support for day-to-day municipal operations, 
-                including attendance at meetings, legal consultations, and 
-                strategic advice for local government officials.
-              </p>
-            </div>
-            <div className="service-item">
-              <h3>Ordinance Drafting & Review</h3>
-              <p>
-                Comprehensive drafting and review of municipal ordinances, 
-                ensuring legal compliance, clarity, and alignment with 
-                community needs and state regulations.
-              </p>
-            </div>
-            <div className="service-item">
-              <h3>Litigation & Dispute Resolution</h3>
-              <p>
-                Aggressive representation in municipal litigation, 
-                administrative proceedings, and conflict resolution, 
-                protecting the interests of local government entities.
-              </p>
-            </div>
+          <h2>Municipal Law Services</h2>
+          <div className="services-grid">
+            {municipalServices.map((service, index) => (
+              <div key={index} className="service-item">
+                {service}
+              </div>
+            ))}
           </div>
         </section>
 
         <section className="approach-section">
           <h2>Our Approach</h2>
           <p>
-            We understand that each municipality has unique challenges. 
-            Our legal strategy focuses on proactive counsel, practical 
-            solutions, and a deep commitment to supporting local governance. 
-            We work closely with municipal leaders to develop legal strategies 
-            that balance regulatory compliance with community goals.
+            Municipal leaders require sound legal advice from attorneys who can anticipate and address 
+            today's complex challenges. We provide strategic counsel that supports local officials while 
+            remaining fair to citizens and sensitive to community concerns. Our goal is to help your 
+            municipality successfully serve its constituents with expert legal guidance.
           </p>
         </section>
+
+        <CtaBox
+          title="Let's Discuss Your Municipal Legal Needs"
+          description="Contact Shane Hobbs Law Office for comprehensive municipal legal support and guidance."
+          buttonText="Request Consultation"
+          buttonLink="/contact"
+        />
       </div>
     </div>
   );
