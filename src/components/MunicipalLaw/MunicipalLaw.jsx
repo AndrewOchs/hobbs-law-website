@@ -31,7 +31,7 @@ const MunicipalLaw = () => {
       <PageHero
         title="Municipal Law"
         subtitle="Comprehensive Legal Counsel for Local Governments"
-        backgroundImage="/images/courthouse_img.jpg"
+        backgroundImage="/public/courthouse_img.jpg"
       />
 
       <div className="container municipal-law-content">
