@@ -12,3 +12,5 @@ const BenefitItem = ({ icon, title, description }) => {
     </div>
   );
 };
+
+export default BenefitItem;
