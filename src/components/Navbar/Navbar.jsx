@@ -8,7 +8,6 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
-  const triggerRef = useRef(null);
   const location = useLocation();
   
   useEffect(() => {
@@ -50,12 +49,7 @@ const Navbar = () => {
   // Handle clicks outside the dropdown
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        dropdownRef.current && 
-        !dropdownRef.current.contains(event.target) &&
-        triggerRef.current && 
-        !triggerRef.current.contains(event.target)
-      ) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsDropdownOpen(false);
       }
     };
@@ -66,17 +60,7 @@ const Navbar = () => {
     };
   }, []);
 
-  const handleDropdownEnter = () => {
-    setIsDropdownOpen(true);
-  };
-
-  const handleDropdownLeave = () => {
-    setTimeout(() => {
-      setIsDropdownOpen(false);
-    }, 200);
-  };
-
-  const handleDropdownClick = () => {
+  const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
@@ -96,22 +80,16 @@ const Navbar = () => {
           <div 
             ref={dropdownRef}
             className={`practice-dropdown ${activeLink === 'practice' ? 'active' : ''}`}
-            onMouseEnter={handleDropdownEnter}
-            onMouseLeave={handleDropdownLeave}
           >
             <div 
-              ref={triggerRef}
               className="practice-dropdown-trigger"
-              onClick={handleDropdownClick}
+              onClick={toggleDropdown}
             >
               <span>Practice Areas</span>
               <span className="dropdown-arrow">▼</span>
             </div>
             {isDropdownOpen && (
-              <div 
-                className="dropdown-menu"
-                onMouseEnter={() => setIsDropdownOpen(true)}
-              >
+              <div className="dropdown-menu">
                 <Link 
                   to="/municipal-law"
                   onClick={() => setIsDropdownOpen(false)}
