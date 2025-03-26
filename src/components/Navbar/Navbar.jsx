@@ -31,18 +31,19 @@ const Navbar = () => {
   // Update active link based on current route
   useEffect(() => {
     const path = location.pathname;
-    switch(path) {
-      case '/':
-        setActiveLink('home');
-        break;
-      case '/municipal-law':
-        setActiveLink('practice');
-        break;
-      case '/contact':
-        setActiveLink('contact');
-        break;
-      default:
-        setActiveLink('home');
+    if (path === '/') {
+      setActiveLink('home');
+    } else if (path.includes('municipal-law')) {
+      setActiveLink('practice');
+    } else if (path.includes('contact')) {
+      setActiveLink('contact');
+    } else if (path.includes('about')) {
+      setActiveLink('about');
+    } else if (path.includes('testimonials')) {
+      setActiveLink('testimonials');
+    } else {
+      // If on a practice area page
+      setActiveLink('practice');
     }
   }, [location]);
 
@@ -64,11 +65,26 @@ const Navbar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  // For the page anchor links - scrolls to section on home page
+  const handleAnchorClick = (sectionId) => {
+    setIsDropdownOpen(false);
+    
+    // If already on home page, scroll to the section
+    if (location.pathname === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isMobile ? 'mobile' : ''}`}>
       <div className="navbar-container">
         <div className="logo">
-          <h1>Shane Hobbs Law Office</h1>
+          <Link to="/">
+            <h1>Shane Hobbs Law Office</h1>
+          </Link>
         </div>
         <div className="nav-links">
           <Link 
@@ -97,34 +113,48 @@ const Navbar = () => {
                   Municipal Law
                 </Link>
                 <Link 
-                  to="/#criminal-defense"
+                  to="/personal-injury"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Personal Injury
+                </Link>
+                <Link 
+                  to="/insurance-litigation"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Insurance Litigation
+                </Link>
+                <Link 
+                  to="/business-law"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  Business Law
+                </Link>
+                <Link 
+                  to="/criminal-defense"
                   onClick={() => setIsDropdownOpen(false)}
                 >
                   Criminal Defense
                 </Link>
                 <Link 
-                  to="/#family-law"
+                  to="/real-estate"
                   onClick={() => setIsDropdownOpen(false)}
                 >
-                  Family Law
-                </Link>
-                <Link 
-                  to="/#personal-injury"
-                  onClick={() => setIsDropdownOpen(false)}
-                >
-                  Personal Injury
+                  Real Estate
                 </Link>
               </div>
             )}
           </div>
           <Link 
-            to="/#about" 
+            to="/"
+            onClick={() => handleAnchorClick('about')} 
             className={activeLink === 'about' ? 'active' : ''}
           >
             About
           </Link>
           <Link 
-            to="/#testimonials" 
+            to="/"
+            onClick={() => handleAnchorClick('testimonials')} 
             className={activeLink === 'testimonials' ? 'active' : ''}
           >
             Testimonials

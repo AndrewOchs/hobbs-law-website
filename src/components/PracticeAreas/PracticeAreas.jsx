@@ -1,36 +1,49 @@
 import React from 'react';
 import './PracticeAreas.css';
+import { Link } from 'react-router-dom';
 
 const practiceAreas = [
   {
     id: 1,
-    title: "Personal Injury",
-    description: "Representing victims of vehicle accidents, defective products, and workplace accidents to ensure you receive fair compensation.",
-    icon: "car-crash"
+    title: "Municipal Law",
+    description: "Providing comprehensive legal counsel to local governments, zoning boards, and municipal authorities.",
+    icon: "landmark",
+    path: "/municipal-law"
   },
   {
     id: 2,
-    title: "Insurance Litigation",
-    description: "Fighting for clients against property damage claims, negligence cases, bad-faith practices, and policy breaches.",
-    icon: "file-contract"
+    title: "Personal Injury",
+    description: "Representing victims of vehicle accidents, defective products, and workplace accidents to ensure you receive fair compensation.",
+    icon: "car-crash",
+    path: "/personal-injury"
   },
   {
     id: 3,
-    title: "Business Law",
-    description: "Assisting with PLCB licensing, business formation, buying/selling businesses, and other commercial legal matters.",
-    icon: "briefcase"
+    title: "Insurance Litigation",
+    description: "Fighting for clients against property damage claims, negligence cases, bad-faith practices, and policy breaches.",
+    icon: "file-contract",
+    path: "/insurance-litigation"
   },
   {
     id: 4,
-    title: "Criminal Defense",
-    description: "Providing aggressive defense for misdemeanors, felonies, traffic infractions, and appeals.",
-    icon: "balance-scale"
+    title: "Business Law",
+    description: "Assisting with PLCB licensing, business formation, buying/selling businesses, and other commercial legal matters.",
+    icon: "briefcase",
+    path: "/business-law"
   },
   {
     id: 5,
+    title: "Criminal Defense",
+    description: "Providing aggressive defense for misdemeanors, felonies, traffic infractions, and appeals.",
+    icon: "balance-scale",
+    path: "/criminal-defense"
+  },
+  {
+    id: 6,
     title: "Real Estate",
     description: "Handling title coverage issues, real estate closings, zoning matters, and property transactions.",
-    icon: "home"
+    icon: "home",
+    path: "/real-estate"
   }
 ];
 
@@ -49,9 +62,9 @@ const PracticeAreas = () => {
             </div>
             <h3>{area.title}</h3>
             <p>{area.description}</p>
-            <a href={`/${area.title.toLowerCase().replace(/\s+/g, '-')}`} className="learn-more">
+            <Link to={area.path} className="learn-more">
               Learn More
-            </a>
+            </Link>
           </div>
         ))}
       </div>
