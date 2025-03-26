@@ -1,61 +1,129 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Testimonials.css';
 
 const testimonials = [
   {
     id: 1,
-    text: "Shane Hobbs provided exceptional representation in my case. His expertise and dedication made all the difference.",
-    client: "J.D., Criminal Defense Client"
+    text: "Shane Hobbs provided exceptional representation in my personal injury case. His knowledge of the law and dedication to my case made all the difference. He fought hard for fair compensation and delivered results beyond my expectations.",
+    client: "John D., Personal Injury Client",
+    rating: 5
   },
   {
     id: 2,
-    text: "I couldn't have asked for a better attorney to handle my divorce. Compassionate yet professional throughout the entire process.",
-    client: "M.S., Family Law Client"
+    text: "I couldn't have asked for a better attorney for my business legal matters. Shane was professional, responsive, and made a complex process straightforward. His expertise in business law saved my company significant time and resources.",
+    client: "Maria S., Business Law Client",
+    rating: 5
   },
   {
     id: 3,
-    text: "After my accident, I was overwhelmed with medical bills and insurance claims. Mr. Hobbs fought for fair compensation and won.",
-    client: "T.R., Personal Injury Client"
+    text: "When facing criminal charges, I was overwhelmed with stress and uncertainty. Mr. Hobbs guided me through every step of the process with confidence and compassion, ultimately achieving a dismissal of all charges against me.",
+    client: "Thomas R., Criminal Defense Client",
+    rating: 5
+  },
+  {
+    id: 4,
+    text: "Shane's expertise in real estate law was invaluable during our home purchase. He identified several potential issues in the contract that we had overlooked and ensured our interests were protected throughout the transaction.",
+    client: "Jennifer K., Real Estate Client",
+    rating: 5
   }
 ];
 
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [autoplay, setAutoplay] = useState(true);
+  
+  useEffect(() => {
+    let interval;
+    if (autoplay) {
+      interval = setInterval(() => {
+        setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+      }, 6000);
+    }
+    
+    return () => clearInterval(interval);
+  }, [autoplay]);
   
   const nextTestimonial = () => {
+    setAutoplay(false);
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
   };
   
   const prevTestimonial = () => {
+    setAutoplay(false);
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+  
+  const goToTestimonial = (index) => {
+    setAutoplay(false);
+    setCurrentTestimonial(index);
+  };
+  
+  const renderStars = (rating) => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      stars.push(
+        <i 
+          key={i} 
+          className={`fas fa-star ${i < rating ? 'filled' : ''}`}
+        ></i>
+      );
+    }
+    return stars;
   };
   
   return (
     <section id="testimonials" className="testimonials">
       <div className="section-header">
         <h2>Client Testimonials</h2>
-        <p>What our clients say about our services</p>
+        <p>What our clients say about our legal services</p>
       </div>
-      <div className="testimonial-slider">
-        <button className="slider-arrow prev" onClick={prevTestimonial}>
-          &lt;
+      
+      <div className="testimonial-container">
+        <button 
+          className="slider-arrow prev" 
+          onClick={prevTestimonial}
+          aria-label="Previous testimonial"
+        >
+          <i className="fas fa-chevron-left"></i>
         </button>
-        <div className="testimonial-card">
-          <div className="quote-mark">"</div>
-          <p className="testimonial-text">{testimonials[currentTestimonial].text}</p>
-          <p className="testimonial-client">{testimonials[currentTestimonial].client}</p>
+        
+        <div className="testimonial-wrapper">
+          <div 
+            className="testimonial-slider" 
+            style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <div key={testimonial.id} className="testimonial-card">
+                <div className="quote-mark">
+                  <i className="fas fa-quote-left"></i>
+                </div>
+                <div className="testimonial-rating">
+                  {renderStars(testimonial.rating)}
+                </div>
+                <p className="testimonial-text">{testimonial.text}</p>
+                <p className="testimonial-client">{testimonial.client}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <button className="slider-arrow next" onClick={nextTestimonial}>
-          &gt;
+        
+        <button 
+          className="slider-arrow next" 
+          onClick={nextTestimonial}
+          aria-label="Next testimonial"
+        >
+          <i className="fas fa-chevron-right"></i>
         </button>
       </div>
+      
       <div className="testimonial-dots">
         {testimonials.map((_, index) => (
-          <span 
+          <button 
             key={index} 
             className={`dot ${currentTestimonial === index ? 'active' : ''}`}
-            onClick={() => setCurrentTestimonial(index)}
-          ></span>
+            onClick={() => goToTestimonial(index)}
+            aria-label={`Go to testimonial ${index + 1}`}
+          ></button>
         ))}
       </div>
     </section>

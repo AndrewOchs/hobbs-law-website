@@ -9,6 +9,11 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-logo">
           <h3>Shane Hobbs Law Office</h3>
+          <p className="tagline">EVERY CLIENT MATTERS</p>
+          <p className="address">
+            123 Legal Street, Suite 100<br />
+            Pottsville, PA 12345
+          </p>
         </div>
         <div className="footer-links">
           <div className="footer-nav">
@@ -24,16 +29,18 @@ const Footer = () => {
           <div className="footer-practice">
             <h4>Practice Areas</h4>
             <ul>
-              <li><a href="#criminal-defense">Criminal Defense</a></li>
-              <li><a href="#family-law">Family Law</a></li>
-              <li><a href="#personal-injury">Personal Injury</a></li>
+              <li><a href="/personal-injury">Personal Injury</a></li>
+              <li><a href="/insurance-litigation">Insurance Litigation</a></li>
+              <li><a href="/business-law">Business Law</a></li>
+              <li><a href="/criminal-defense">Criminal Defense</a></li>
+              <li><a href="/real-estate">Real Estate</a></li>
             </ul>
           </div>
           <div className="footer-contact">
             <h4>Contact Information</h4>
-            <p><i className="fas fa-map-marker-alt"></i> 123 Legal Street, Suite 100, Cityville, ST 12345</p>
-            <p><i className="fas fa-phone"></i> (555) 555-5555</p>
-            <p><i className="fas fa-envelope"></i> contact@shanehobbslaw.com</p>
+            <p><i className="fas fa-map-marker-alt"></i> 123 Legal Street, Suite 100, Pottsville, PA 12345</p>
+            <p><i className="fas fa-phone"></i> (570) 628-2806</p>
+            <p><i className="fas fa-envelope"></i> shane@shanehobbslawoffice.com</p>
           </div>
         </div>
         <div className="footer-social">
@@ -48,6 +55,9 @@ const Footer = () => {
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-linkedin-in"></i>
             </a>
+          </div>
+          <div className="cta-button">
+            <a href="#contact" className="footer-btn">Request Consultation</a>
           </div>
         </div>
       </div>

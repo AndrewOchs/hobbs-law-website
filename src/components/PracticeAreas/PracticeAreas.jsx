@@ -4,23 +4,34 @@ import './PracticeAreas.css';
 const practiceAreas = [
   {
     id: 1,
-    title: "Criminal Defense",
-    description: "Aggressive defense against all criminal charges, from misdemeanors to felonies.",
-    icon: "balance-scale"
+    title: "Personal Injury",
+    description: "Representing victims of vehicle accidents, defective products, and workplace accidents to ensure you receive fair compensation.",
+    icon: "car-crash"
   },
   {
     id: 2,
-    title: "Family Law",
-    description: "Compassionate representation for divorce, custody, and other family matters.",
-    icon: "users"
+    title: "Insurance Litigation",
+    description: "Fighting for clients against property damage claims, negligence cases, bad-faith practices, and policy breaches.",
+    icon: "file-contract"
   },
   {
     id: 3,
-    title: "Personal Injury",
-    description: "Fighting for fair compensation for injuries caused by negligence.",
-    icon: "first-aid"
+    title: "Business Law",
+    description: "Assisting with PLCB licensing, business formation, buying/selling businesses, and other commercial legal matters.",
+    icon: "briefcase"
+  },
+  {
+    id: 4,
+    title: "Criminal Defense",
+    description: "Providing aggressive defense for misdemeanors, felonies, traffic infractions, and appeals.",
+    icon: "balance-scale"
+  },
+  {
+    id: 5,
+    title: "Real Estate",
+    description: "Handling title coverage issues, real estate closings, zoning matters, and property transactions.",
+    icon: "home"
   }
-  // Add more practice areas based on their actual services
 ];
 
 const PracticeAreas = () => {
@@ -38,7 +49,7 @@ const PracticeAreas = () => {
             </div>
             <h3>{area.title}</h3>
             <p>{area.description}</p>
-            <a href={`#${area.title.toLowerCase().replace(/\s+/g, '-')}`} className="learn-more">
+            <a href={`/${area.title.toLowerCase().replace(/\s+/g, '-')}`} className="learn-more">
               Learn More
             </a>
           </div>

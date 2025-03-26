@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer';
 // Sections for routing
 import Hero from './components/Hero/Hero';
 import PracticeAreas from './components/PracticeAreas/PracticeAreas';
+import WhyChooseUs from './components/WhyChooseUs/WhyChooseUs';
 import AttorneyProfile from './components/AttorneyProfile/AttorneyProfile';
 import Testimonials from './components/Testimonials/Testimonials';
 import ContactSection from './components/ContactSection/ContactSection';
@@ -18,6 +19,7 @@ const HomePage = () => (
   <>
     <Hero />
     <PracticeAreas />
+    <WhyChooseUs />
     <AttorneyProfile />
     <Testimonials />
     <ContactSection />
