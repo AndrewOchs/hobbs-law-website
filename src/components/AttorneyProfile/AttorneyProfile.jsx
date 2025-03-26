@@ -12,31 +12,33 @@ const AttorneyProfile = () => {
           <h2>Shane Hobbs, Attorney at Law</h2>
           <h3>Dedicated to Fighting for Your Rights</h3>
           <p>
-            With over 15 years of experience, Shane Hobbs has successfully represented
-            clients in a wide range of legal matters throughout Pennsylvania. His commitment to justice,
-            attention to detail, and aggressive representation have earned him a
-            reputation as one of the most trusted attorneys in Pottsville and the surrounding areas.
+            Shane H. Hobbs is a third-generation Pennsylvania attorney with deep roots in Pottsville. 
+            A graduate of Pottsville Area High School and Ursinus College, Shane earned his Juris Doctorate 
+            in 2010 from Western Michigan University – Cooley Law School. He continues the legacy of legal 
+            excellence established by his father, the late state Senator Frederick H. Hobbs, and his 
+            grandfather, the late Superior Court President Judge G. Harold Watkins.
           </p>
           <p>
-            Shane understands that every client's situation is unique, which is why he provides
-            personalized attention to each case. Whether you're dealing with a personal injury claim,
-            criminal charges, or business matters, you can count on Shane's expertise and dedication.
+            With a focus on general civil litigation, insurance coverage, business law, real estate, and 
+            municipal law, Shane provides dedicated representation to clients throughout Schuylkill County. 
+            His commitment to excellence and client service has earned him recognition as a Top Attorney in 
+            Pennsylvania (2019-2022) as published by Philadelphia Magazine.
           </p>
           <div className="credentials">
             <div className="credential-item">
               <h4>Recognition</h4>
               <p>Selected to Rising Stars (2019-2022)</p>
-              <p>Top Civil Litigation Attorney</p>
+              <p>Top Rated Civil Litigation Attorney</p>
             </div>
             <div className="credential-item">
-              <h4>Education</h4>
-              <p>J.D., Law School</p>
-              <p>B.A., University</p>
+              <h4>Community Service</h4>
+              <p>Solicitor for multiple local municipalities</p>
+              <p>Pro bono work for non-profit entities</p>
             </div>
             <div className="credential-item">
-              <h4>Memberships</h4>
-              <p>Pennsylvania Bar Association</p>
-              <p>American Bar Association</p>
+              <h4>Practice Areas</h4>
+              <p>Civil Litigation, Insurance Coverage</p>
+              <p>Business Law, Real Estate, Municipal Law</p>
             </div>
           </div>
         </div>
