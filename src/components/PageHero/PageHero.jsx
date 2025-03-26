@@ -6,7 +6,7 @@ const PageHero = ({ title, subtitle, backgroundImage }) => {
     <section 
       className="page-hero"
       style={{
-        backgroundImage: `url(${backgroundImage})`
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${backgroundImage})`
       }}
     >
       <div className="hero-overlay"></div>
