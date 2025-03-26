@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('home');
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const location = useLocation();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -13,16 +15,6 @@ const Navbar = () => {
       } else {
         setScrolled(false);
       }
-      
-      // Optional: update active link based on scroll position
-      const sections = document.querySelectorAll('section');
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.offsetHeight;
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-          setActiveLink(section.id);
-        }
-      });
     };
     
     const handleResize = () => {
@@ -38,10 +30,23 @@ const Navbar = () => {
     };
   }, []);
   
-  const handleLinkClick = (id) => {
-    setActiveLink(id);
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-  };
+  // Update active link based on current route
+  useEffect(() => {
+    const path = location.pathname;
+    switch(path) {
+      case '/':
+        setActiveLink('home');
+        break;
+      case '/municipal-law':
+        setActiveLink('practice');
+        break;
+      case '/contact':
+        setActiveLink('contact');
+        break;
+      default:
+        setActiveLink('home');
+    }
+  }, [location]);
   
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isMobile ? 'mobile' : ''}`}>
@@ -50,56 +55,36 @@ const Navbar = () => {
           <h1>Shane Hobbs Law Office</h1>
         </div>
         <div className="nav-links">
-          <a 
-            href="#home" 
+          <Link 
+            to="/" 
             className={activeLink === 'home' ? 'active' : ''}
-            onClick={(e) => {
-              e.preventDefault();
-              handleLinkClick('home');
-            }}
           >
             Home
-          </a>
-          <a 
-            href="#practice" 
+          </Link>
+          <Link 
+            to="/municipal-law" 
             className={activeLink === 'practice' ? 'active' : ''}
-            onClick={(e) => {
-              e.preventDefault();
-              handleLinkClick('practice');
-            }}
           >
             Practice Areas
-          </a>
-          <a 
-            href="#about" 
+          </Link>
+          <Link 
+            to="/#about" 
             className={activeLink === 'about' ? 'active' : ''}
-            onClick={(e) => {
-              e.preventDefault();
-              handleLinkClick('about');
-            }}
           >
             About
-          </a>
-          <a 
-            href="#testimonials" 
+          </Link>
+          <Link 
+            to="/#testimonials" 
             className={activeLink === 'testimonials' ? 'active' : ''}
-            onClick={(e) => {
-              e.preventDefault();
-              handleLinkClick('testimonials');
-            }}
           >
             Testimonials
-          </a>
-          <a 
-            href="#contact" 
+          </Link>
+          <Link 
+            to="/contact" 
             className={activeLink === 'contact' ? 'active' : ''}
-            onClick={(e) => {
-              e.preventDefault();
-              handleLinkClick('contact');
-            }}
           >
             Contact
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
