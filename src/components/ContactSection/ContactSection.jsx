@@ -43,8 +43,10 @@ const ContactSection = () => {
               <i className="fas fa-map-marker-alt"></i>
               <div>
                 <h3>Office Address</h3>
-                <p>123 Legal Street, Suite 100</p>
-                <p>Pottsville, PA 12345</p>
+                <p>Law Office of Shane Hobbs</p>
+                <p>Masonic Building</p>
+                <p>4 S. 2nd St., #303</p>
+                <p>Pottsville, PA 17901</p>
               </div>
             </div>
             <div className="info-item">
@@ -58,15 +60,14 @@ const ContactSection = () => {
               <i className="fas fa-envelope"></i>
               <div>
                 <h3>Email</h3>
-                <p>shane@shanehobbslawoffice.com</p>
+                <p>info@shanehobbslawoffice.com</p>
               </div>
             </div>
             <div className="info-item">
               <i className="fas fa-clock"></i>
               <div>
                 <h3>Office Hours</h3>
-                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-                <p>Weekends: By appointment only</p>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
               </div>
             </div>
           </div>
