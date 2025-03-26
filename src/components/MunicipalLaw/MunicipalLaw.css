@@ -1,0 +1,163 @@
+/* Municipal Law Page Styles */
+
+.municipal-law-page {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Practice Intro Section */
+  .practice-intro {
+    padding: 60px 0;
+    background-color: white;
+  }
+  
+  .practice-intro .lead {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+  
+  .practice-intro p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  /* Areas Covered Section */
+  .areas-covered {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+  }
+  
+  .areas-covered h2 {
+    color: #003366;
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  
+  .areas-covered > p {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  /* Why Choose Us Section */
+  .why-choose {
+    padding: 60px 0;
+    background-color: white;
+  }
+  
+  .why-choose h2 {
+    color: #003366;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  /* Municipal Law Approach Section */
+  .municipal-law-approach {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+  }
+  
+  .municipal-law-approach h2 {
+    color: #003366;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  
+  .approach-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  /* Key Considerations Section */
+  .key-considerations {
+    padding: 60px 0;
+    background-color: white;
+  }
+  
+  .key-considerations h2 {
+    color: #003366;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  
+  .considerations-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  /* Client Commitment Section */
+  .client-commitment {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+  }
+  
+  .client-commitment h2 {
+    color: #003366;
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+  }
+  
+  .client-commitment p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .services-grid,
+    .benefits-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .practice-intro .lead {
+      font-size: 1.2rem;
+    }
+    
+    .areas-covered h2,
+    .why-choose h2,
+    .municipal-law-approach h2,
+    .key-considerations h2,
+    .client-commitment h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .services-grid,
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .areas-covered h2,
+    .why-choose h2,
+    .municipal-law-approach h2,
+    .key-considerations h2,
+    .client-commitment h2 {
+      font-size: 1.8rem;
+    }
+  }
