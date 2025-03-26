@@ -6,7 +6,7 @@ const AttorneyProfile = () => {
     <section id="about" className="attorney-profile">
       <div className="profile-container">
         <div className="profile-image">
-          <img src="/attorney-image.png" alt="Attorney Shane Hobbs" />
+          <img src="/attorney_image.jpg" alt="Attorney Shane Hobbs" />
         </div>
         <div className="profile-content">
           <h2>Shane Hobbs, Attorney at Law</h2>
