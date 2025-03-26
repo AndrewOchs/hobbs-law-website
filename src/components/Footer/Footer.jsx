@@ -1,39 +1,64 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    
+    // Check if we're on home page
+    if (location.pathname === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If not on home page, navigate to home page with section hash
+      window.location.href = `/#${sectionId}`;
+    }
+  };
   
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-logo">
           <h3>Shane Hobbs Law Office</h3>
+          <p className="tagline">EVERY CLIENT MATTERS</p>
+          <p className="address">
+            123 Legal Street, Suite 100<br />
+            Pottsville, PA 12345
+          </p>
         </div>
         <div className="footer-links">
           <div className="footer-nav">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#practice">Practice Areas</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><a href="/#practice" onClick={(e) => scrollToSection(e, 'practice')}>Practice Areas</a></li>
+              <li><a href="/#about" onClick={(e) => scrollToSection(e, 'about')}>About</a></li>
+              <li><a href="/#testimonials" onClick={(e) => scrollToSection(e, 'testimonials')}>Testimonials</a></li>
+              <li><a href="/#contact" onClick={(e) => scrollToSection(e, 'contact')}>Contact</a></li>
             </ul>
           </div>
           <div className="footer-practice">
             <h4>Practice Areas</h4>
             <ul>
-              <li><a href="#criminal-defense">Criminal Defense</a></li>
-              <li><a href="#family-law">Family Law</a></li>
-              <li><a href="#personal-injury">Personal Injury</a></li>
+              <li><Link to="/municipal-law">Municipal Law</Link></li>
+              <li><Link to="/personal-injury">Personal Injury</Link></li>
+              <li><Link to="/insurance-litigation">Insurance Litigation</Link></li>
+              <li><Link to="/business-law">Business Law</Link></li>
+              <li><Link to="/criminal-defense">Criminal Defense</Link></li>
+              <li><Link to="/real-estate">Real Estate</Link></li>
             </ul>
           </div>
           <div className="footer-contact">
             <h4>Contact Information</h4>
-            <p><i className="fas fa-map-marker-alt"></i> 123 Legal Street, Suite 100, Cityville, ST 12345</p>
-            <p><i className="fas fa-phone"></i> (555) 555-5555</p>
-            <p><i className="fas fa-envelope"></i> contact@shanehobbslaw.com</p>
+            <p><i className="fas fa-map-marker-alt"></i> 123 Legal Street, Suite 100, Pottsville, PA 12345</p>
+            <p><i className="fas fa-phone"></i> (570) 628-2806</p>
+            <p><i className="fas fa-envelope"></i> shane@shanehobbslawoffice.com</p>
           </div>
         </div>
         <div className="footer-social">
@@ -49,13 +74,20 @@ const Footer = () => {
               <i className="fab fa-linkedin-in"></i>
             </a>
           </div>
+          <div className="cta-button">
+            <a href="/#contact" 
+               onClick={(e) => scrollToSection(e, 'contact')} 
+               className="footer-btn">
+              Request Consultation
+            </a>
+          </div>
         </div>
       </div>
       <div className="footer-bottom">
         <p>&copy; {currentYear} Shane Hobbs Law Office. All Rights Reserved.</p>
         <p>
-          <a href="/privacy-policy">Privacy Policy</a> | 
-          <a href="/terms-of-service">Terms of Service</a>
+          <Link to="/privacy-policy">Privacy Policy</Link> | 
+          <Link to="/terms-of-service">Terms of Service</Link>
         </p>
       </div>
     </footer>

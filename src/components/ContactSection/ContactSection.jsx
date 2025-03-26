@@ -38,39 +38,49 @@ const ContactSection = () => {
       </div>
       <div className="contact-container">
         <div className="contact-info">
-          <div className="info-item">
-            <i className="fas fa-map-marker-alt"></i>
-            <div>
-              <h3>Office Address</h3>
-              <p>123 Legal Street, Suite 100</p>
-              <p>Cityville, ST 12345</p>
+          <div className="info-box">
+            <div className="info-item">
+              <i className="fas fa-map-marker-alt"></i>
+              <div>
+                <h3>Office Address</h3>
+                <p>123 Legal Street, Suite 100</p>
+                <p>Pottsville, PA 12345</p>
+              </div>
             </div>
-          </div>
-          <div className="info-item">
-            <i className="fas fa-phone"></i>
-            <div>
-              <h3>Phone</h3>
-              <p>(555) 555-5555</p>
+            <div className="info-item">
+              <i className="fas fa-phone"></i>
+              <div>
+                <h3>Phone</h3>
+                <p>(570) 628-2806</p>
+              </div>
             </div>
-          </div>
-          <div className="info-item">
-            <i className="fas fa-envelope"></i>
-            <div>
-              <h3>Email</h3>
-              <p>contact@shanehobbslaw.com</p>
+            <div className="info-item">
+              <i className="fas fa-envelope"></i>
+              <div>
+                <h3>Email</h3>
+                <p>shane@shanehobbslawoffice.com</p>
+              </div>
             </div>
-          </div>
-          <div className="info-item">
-            <i className="fas fa-clock"></i>
-            <div>
-              <h3>Office Hours</h3>
-              <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-              <p>Weekends: By appointment only</p>
+            <div className="info-item">
+              <i className="fas fa-clock"></i>
+              <div>
+                <h3>Office Hours</h3>
+                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                <p>Weekends: By appointment only</p>
+              </div>
             </div>
           </div>
           <div className="map-container">
-            {/* Google Maps would go here */}
-            <div className="map-placeholder">Map Loading...</div>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48373.66047448976!2d-76.22271517541196!3d40.68598287216193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c5db6dbe3d5883%3A0xa9d9e8a1eda138f3!2sPottsville%2C%20PA!5e0!3m2!1sen!2sus!4v1716661324196!5m2!1sen!2sus" 
+              width="100%" 
+              height="300" 
+              style={{border:0, borderRadius: '8px'}} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Office Location"
+            ></iframe>
           </div>
         </div>
         <div className="contact-form">
@@ -119,9 +129,11 @@ const ContactSection = () => {
                 required
               >
                 <option value="">Select Case Type</option>
-                <option value="criminal">Criminal Defense</option>
-                <option value="family">Family Law</option>
                 <option value="personal-injury">Personal Injury</option>
+                <option value="insurance">Insurance Litigation</option>
+                <option value="business">Business Law</option>
+                <option value="criminal">Criminal Defense</option>
+                <option value="real-estate">Real Estate</option>
                 <option value="other">Other</option>
               </select>
             </div>
