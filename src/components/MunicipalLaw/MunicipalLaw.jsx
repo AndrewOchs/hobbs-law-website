@@ -44,16 +44,6 @@ const MunicipalLaw = () => {
           </p>
         </section>
 
-        <section className="expertise-section">
-          <h2>Our Municipal Law Expertise</h2>
-          <p>
-            We understand the critical importance of staying current with the latest federal and state 
-            legal developments. Our attorneys are actively engaged with professional municipal associations 
-            and regularly attend state and local seminars to ensure our clients receive the most up-to-date 
-            and comprehensive legal guidance.
-          </p>
-        </section>
-
         <section className="entities-section">
           <h2>Municipalities We Serve</h2>
           <div className="entities-grid">
@@ -63,6 +53,16 @@ const MunicipalLaw = () => {
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="expertise-section">
+          <h2>Our Municipal Law Expertise</h2>
+          <p>
+            We understand the critical importance of staying current with the latest federal and state 
+            legal developments. Our attorneys are actively engaged with professional municipal associations 
+            and regularly attend state and local seminars to ensure our clients receive the most up-to-date 
+            and comprehensive legal guidance.
+          </p>
         </section>
 
         <section className="services-section">

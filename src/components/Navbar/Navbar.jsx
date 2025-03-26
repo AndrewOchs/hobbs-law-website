@@ -33,17 +33,25 @@ const Navbar = () => {
     const path = location.pathname;
     if (path === '/') {
       setActiveLink('home');
-    } else if (path.includes('municipal-law')) {
+      
+      // Check if there's a hash in the URL to set the active link
+      const hash = window.location.hash;
+      if (hash) {
+        const section = hash.substring(1); // Remove the # character
+        if (section === 'contact' || section === 'about' || 
+            section === 'practice' || section === 'testimonials') {
+          setActiveLink(section);
+        }
+      }
+    } else if (path.includes('municipal-law') || 
+               path.includes('personal-injury') || 
+               path.includes('insurance-litigation') || 
+               path.includes('business-law') ||
+               path.includes('criminal-defense') ||
+               path.includes('real-estate')) {
       setActiveLink('practice');
-    } else if (path.includes('contact')) {
-      setActiveLink('contact');
-    } else if (path.includes('about')) {
-      setActiveLink('about');
-    } else if (path.includes('testimonials')) {
-      setActiveLink('testimonials');
     } else {
-      // If on a practice area page
-      setActiveLink('practice');
+      setActiveLink('home');
     }
   }, [location]);
 
@@ -75,6 +83,9 @@ const Navbar = () => {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
+    } else {
+      // If on another page, navigate to home with hash
+      window.location.href = `/#${sectionId}`;
     }
   };
 
@@ -145,26 +156,36 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <Link 
-            to="/"
-            onClick={() => handleAnchorClick('about')} 
+          <a 
+            href="#about" 
+            onClick={(e) => {
+              e.preventDefault();
+              handleAnchorClick('about');
+            }}
             className={activeLink === 'about' ? 'active' : ''}
           >
             About
-          </Link>
-          <Link 
-            to="/"
-            onClick={() => handleAnchorClick('testimonials')} 
+          </a>
+          <a 
+            href="#testimonials" 
+            onClick={(e) => {
+              e.preventDefault();
+              handleAnchorClick('testimonials');
+            }}
             className={activeLink === 'testimonials' ? 'active' : ''}
           >
             Testimonials
-          </Link>
-          <Link 
-            to="/contact" 
+          </a>
+          <a 
+            href="#contact" 
+            onClick={(e) => {
+              e.preventDefault();
+              handleAnchorClick('contact');
+            }}
             className={activeLink === 'contact' ? 'active' : ''}
           >
             Contact
-          </Link>
+          </a>
         </div>
       </div>
     </nav>
