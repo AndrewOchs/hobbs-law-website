@@ -1,4 +1,3 @@
-/* Municipal Law Page Styles */
 .municipal-law-page {
   font-family: 'Roboto', sans-serif;
   color: #333;
@@ -18,6 +17,10 @@
   padding: 40px;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.municipal-law-content {
+  padding-bottom: 60px; /* Adds extra space before the footer */
 }
 
 .municipal-law-content h2 {
@@ -78,6 +81,12 @@
   .municipal-law-content h2 {
     font-size: 1.8rem;
   }
+}
+
+/* CTA Container */
+.cta-container {
+  margin-top: 40px;
+  padding-bottom: 20px;
 }
 
 /* Subtle Animations */

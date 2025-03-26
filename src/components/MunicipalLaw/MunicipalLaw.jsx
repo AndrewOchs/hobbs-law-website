@@ -31,7 +31,7 @@ const MunicipalLaw = () => {
       <PageHero
         title="Municipal Law"
         subtitle="Comprehensive Legal Counsel for Local Governments"
-        backgroundImage="/images/courthouse.jpg"
+        backgroundImage="/images/courthouse_img.jpg"
       />
 
       <div className="container municipal-law-content">
@@ -86,12 +86,14 @@ const MunicipalLaw = () => {
           </p>
         </section>
 
-        <CtaBox
-          title="Let's Discuss Your Municipal Legal Needs"
-          description="Contact Shane Hobbs Law Office for comprehensive municipal legal support and guidance."
-          buttonText="Request Consultation"
-          buttonLink="/contact"
-        />
+        <div className="cta-container">
+          <CtaBox
+            title="Let's Discuss Your Municipal Legal Needs"
+            description="Contact Shane Hobbs Law Office for comprehensive municipal legal support and guidance."
+            buttonText="Request Consultation"
+            buttonLink="/contact"
+          />
+        </div>
       </div>
     </div>
   );
