@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
@@ -7,15 +7,12 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isPracticeDropdownOpen, setIsPracticeDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
   const location = useLocation();
   
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
     
     const handleResize = () => {
@@ -49,6 +46,35 @@ const Navbar = () => {
     }
   }, [location]);
 
+  // Handle dropdown interactions
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsPracticeDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleDropdownEnter = () => {
+    setIsPracticeDropdownOpen(true);
+  };
+
+  const handleDropdownLeave = () => {
+    // Slight delay to allow movement to dropdown menu
+    setTimeout(() => {
+      setIsPracticeDropdownOpen(false);
+    }, 200);
+  };
+
+  const handleDropdownMenuEnter = () => {
+    setIsPracticeDropdownOpen(true);
+  };
+
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isMobile ? 'mobile' : ''}`}>
       <div className="navbar-container">
@@ -63,9 +89,10 @@ const Navbar = () => {
             Home
           </Link>
           <div 
+            ref={dropdownRef}
             className={`practice-dropdown ${activeLink === 'practice' ? 'active' : ''}`}
-            onMouseEnter={() => setIsPracticeDropdownOpen(true)}
-            onMouseLeave={() => setIsPracticeDropdownOpen(false)}
+            onMouseEnter={handleDropdownEnter}
+            onMouseLeave={handleDropdownLeave}
           >
             <div className="practice-dropdown-trigger">
               <span>Practice Areas</span>
@@ -74,7 +101,8 @@ const Navbar = () => {
             {isPracticeDropdownOpen && (
               <div 
                 className="dropdown-menu"
-                onMouseEnter={() => setIsPracticeDropdownOpen(true)}
+                onMouseEnter={handleDropdownMenuEnter}
+                onMouseLeave={handleDropdownLeave}
               >
                 <Link 
                   to="/municipal-law"
