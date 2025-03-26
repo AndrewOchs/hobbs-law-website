@@ -1,131 +1,84 @@
-/* Municipal Law Page Refined Styles */
+/* Municipal Law Page Styles */
 .municipal-law-page {
   font-family: 'Roboto', sans-serif;
-  color: #2c3e50;
+  color: #333;
   line-height: 1.6;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
-.section {
-  padding: 60px 0;
-  background-color: white;
+.municipal-law-content {
+  padding: 40px 0;
 }
 
-.section:nth-child(even) {
-  background-color: #f9fafb;
-}
-
-.section-header {
-  text-align: center;
+.municipal-law-content section {
   margin-bottom: 40px;
 }
 
-.section-header h2 {
+.municipal-law-content h2 {
   color: #003366;
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-  font-weight: 700;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 500;
 }
 
-.section-header p {
-  color: #6c757d;
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1rem;
+.intro-section p,
+.approach-section p {
+  color: #666;
+  margin-bottom: 20px;
 }
 
-/* Services Section Layout */
-.services-content,
-.benefits-content,
-.approach-content {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.services-grid,
-.benefits-grid {
+.services-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  flex: 1;
+  gap: 30px;
 }
 
-.services-image,
-.benefits-image,
-.approach-image {
-  flex: 1;
+.service-item {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease;
 }
 
-.section-image {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+.service-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.section-image:hover {
-  transform: scale(1.02);
+.service-item h3 {
+  color: #003366;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
-/* Approach Steps */
-.approach-steps {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.service-item p {
+  color: #666;
+  font-size: 0.9rem;
 }
 
 /* Responsive Adjustments */
-@media (max-width: 1024px) {
-  .services-content,
-  .benefits-content,
-  .approach-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .services-grid,
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .services-image,
-  .benefits-image,
-  .approach-image {
-    margin-top: 30px;
-    max-width: 600px;
-  }
-}
-
 @media (max-width: 768px) {
-  .section {
-    padding: 40px 0;
-  }
-
-  .section-header h2 {
-    font-size: 1.8rem;
-  }
-
-  .services-grid,
-  .benefits-grid {
+  .services-list {
     grid-template-columns: 1fr;
   }
+
+  .municipal-law-content h2 {
+    font-size: 1.8rem;
+  }
 }
 
-/* Hover Effects */
-.service-item,
-.benefit-item {
+/* Subtle Animations */
+.service-item {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-item:hover,
-.benefit-item:hover {
+.service-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
