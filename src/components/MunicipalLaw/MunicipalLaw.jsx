@@ -12,38 +12,38 @@ const MunicipalLaw = () => {
     {
       id: 1,
       icon: "book",
-      title: "General Counsel Services",
-      description: "Comprehensive legal guidance for municipal operations, including strategic advice, meeting attendance, and timely legal consultations."
+      title: "General Counsel",
+      description: "Strategic legal guidance for municipal operations and decision-making."
     },
     {
       id: 2,
       icon: "file-contract",
       title: "Ordinance Drafting",
-      description: "Precise drafting and review of municipal ordinances to ensure legal compliance and community-specific needs."
+      description: "Precise legal drafting ensuring compliance and community needs."
     },
     {
       id: 3,
       icon: "handshake",
       title: "Contract Negotiations",
-      description: "Expert contract review and negotiation to protect municipal interests and optimize vendor agreements."
+      description: "Expert contract review protecting municipal interests."
     },
     {
       id: 4,
       icon: "balance-scale",
       title: "Litigation Support",
-      description: "Robust legal representation in municipal disputes, administrative proceedings, and civil litigation."
+      description: "Comprehensive legal representation in municipal disputes."
     },
     {
       id: 5,
       icon: "map",
       title: "Land Use Planning",
-      description: "Strategic guidance on zoning, land development, and community planning legal frameworks."
+      description: "Strategic guidance on zoning and community development."
     },
     {
       id: 6,
       icon: "users",
       title: "Employment Law",
-      description: "Comprehensive employment law counsel addressing personnel policies, labor relations, and regulatory compliance."
+      description: "Comprehensive counsel on personnel and labor relations."
     }
   ];
 
@@ -52,93 +52,37 @@ const MunicipalLaw = () => {
       id: 1,
       icon: "lightbulb",
       title: "Proactive Solutions",
-      description: "Strategic legal guidance that anticipates challenges and provides actionable recommendations."
+      description: "Anticipating challenges with strategic legal insights."
     },
     {
       id: 2,
       icon: "comments",
       title: "Clear Communication",
-      description: "Transparent, timely, and accessible legal counsel tailored to municipal decision-making processes."
+      description: "Transparent, accessible legal guidance for municipalities."
     },
     {
       id: 3,
       icon: "landmark",
       title: "Regulatory Expertise",
-      description: "Deep understanding of local government legal landscapes and emerging municipal governance trends."
+      description: "Deep understanding of municipal legal landscapes."
     },
     {
       id: 4,
       icon: "shield-alt",
       title: "Risk Management",
-      description: "Comprehensive risk assessment and mitigation strategies to protect municipal interests."
+      description: "Comprehensive strategies to protect municipal interests."
     },
     {
       id: 5,
       icon: "dollar-sign",
-      title: "Cost-Effective Representation",
-      description: "Efficient legal services designed to maximize value and minimize unnecessary expenditures."
+      title: "Cost-Effective",
+      description: "Efficient services maximizing legal value."
     },
     {
       id: 6,
       icon: "handshake",
       title: "Long-Term Partnership",
-      description: "Committed to building lasting relationships focused on your municipality's sustained success."
-    }
-  ];
-
-  const approachSteps = [
-    {
-      id: 1,
-      stepNumber: 1,
-      title: "Comprehensive Assessment",
-      description: "Conducting an in-depth analysis of your municipality's unique legal landscape, challenges, and strategic objectives."
-    },
-    {
-      id: 2,
-      stepNumber: 2,
-      title: "Preventative Strategy",
-      description: "Developing proactive legal frameworks to anticipate and mitigate potential issues before they escalate."
-    },
-    {
-      id: 3,
-      stepNumber: 3,
-      title: "Tailored Solutions",
-      description: "Crafting precise, legally sound solutions that align with your municipality's specific needs and community values."
-    },
-    {
-      id: 4,
-      stepNumber: 4,
-      title: "Transparent Guidance",
-      description: "Explaining complex legal concepts in clear, accessible language to empower municipal decision-makers."
-    },
-    {
-      id: 5,
-      stepNumber: 5,
-      title: "Continuous Support",
-      description: "Providing ongoing legal education and updates to keep your municipality ahead of evolving regulatory landscapes."
-    }
-  ];
-
-  const considerationItems = [
-    {
-      id: 1,
-      title: "Transparency Compliance",
-      description: "Ensuring rigorous adherence to open meeting laws and public disclosure requirements, maintaining community trust."
-    },
-    {
-      id: 2,
-      title: "Information Management",
-      description: "Strategic guidance on managing public records, balancing transparency with necessary confidentiality."
-    },
-    {
-      id: 3,
-      title: "Procurement Integrity",
-      description: "Comprehensive oversight of bidding processes to guarantee fair, competitive, and legally compliant municipal contracts."
-    },
-    {
-      id: 4,
-      title: "Risk Mitigation",
-      description: "Identifying and strategically addressing potential legal vulnerabilities to protect municipal resources."
+      description: "Committed to your municipality's sustained success."
     }
   ];
 
@@ -150,33 +94,30 @@ const MunicipalLaw = () => {
         backgroundImage="/images/courthouse.jpg"
       />
 
-      <section className="section practice-intro">
-        <div className="container">
-          <div className="section-content">
-            <h2 className="section-title">Comprehensive Municipal Legal Support</h2>
-            <p className="section-description">
-              We provide sophisticated legal guidance tailored to the unique challenges of local government, 
-              combining deep regulatory expertise with strategic, forward-thinking counsel.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="section services-section">
         <div className="container">
           <div className="section-header">
-            <h2>Specialized Municipal Services</h2>
-            <p>Comprehensive legal support across critical municipal operational areas</p>
+            <h2>Comprehensive Municipal Services</h2>
+            <p>Targeted legal support for local government operations</p>
           </div>
-          <div className="services-grid">
-            {serviceItems.map(item => (
-              <ServiceItem
-                key={item.id}
-                icon={item.icon}
-                title={item.title}
-                description={item.description}
+          <div className="services-content">
+            <div className="services-grid">
+              {serviceItems.map(item => (
+                <ServiceItem
+                  key={item.id}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                />
+              ))}
+            </div>
+            <div className="services-image">
+              <img 
+                src="/images/municipal-services.jpg" 
+                alt="Municipal Government Legal Services" 
+                className="section-image"
               />
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -185,17 +126,26 @@ const MunicipalLaw = () => {
         <div className="container">
           <div className="section-header">
             <h2>Why Choose Our Municipal Law Practice</h2>
-            <p>Delivering strategic legal solutions that empower local governance</p>
+            <p>Delivering strategic legal solutions for local governance</p>
           </div>
-          <div className="benefits-grid">
-            {benefitItems.map(item => (
-              <BenefitItem
-                key={item.id}
-                icon={item.icon}
-                title={item.title}
-                description={item.description}
+          <div className="benefits-content">
+            <div className="benefits-image">
+              <img 
+                src="/images/municipal-consultation.jpg" 
+                alt="Municipal Legal Consultation" 
+                className="section-image"
               />
-            ))}
+            </div>
+            <div className="benefits-grid">
+              {benefitItems.map(item => (
+                <BenefitItem
+                  key={item.id}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -204,35 +154,33 @@ const MunicipalLaw = () => {
         <div className="container">
           <div className="section-header">
             <h2>Our Strategic Approach</h2>
-            <p>A methodical process designed to provide comprehensive municipal legal support</p>
+            <p>Methodical process for comprehensive municipal legal support</p>
           </div>
-          <div className="approach-steps">
-            {approachSteps.map(step => (
+          <div className="approach-content">
+            <div className="approach-steps">
               <ApproachStep
-                key={step.id}
-                stepNumber={step.stepNumber}
-                title={step.title}
-                description={step.description}
+                stepNumber={1}
+                title="Comprehensive Assessment"
+                description="In-depth analysis of your municipality's legal landscape and objectives."
               />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section considerations-section">
-        <div className="container">
-          <div className="section-header">
-            <h2>Critical Legal Considerations</h2>
-            <p>Key focus areas for municipal legal compliance and risk management</p>
-          </div>
-          <div className="considerations-content">
-            {considerationItems.map(item => (
-              <ConsiderationItem
-                key={item.id}
-                title={item.title}
-                description={item.description}
+              <ApproachStep
+                stepNumber={2}
+                title="Preventative Strategy"
+                description="Proactive legal frameworks to mitigate potential issues."
               />
-            ))}
+              <ApproachStep
+                stepNumber={3}
+                title="Tailored Solutions"
+                description="Precise legal strategies aligned with community needs."
+              />
+            </div>
+            <div className="approach-image">
+              <img 
+                src="/images/legal-strategy.jpg" 
+                alt="Municipal Legal Strategy" 
+                className="section-image"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -241,7 +189,7 @@ const MunicipalLaw = () => {
         <div className="container">
           <CtaBox
             title="Enhance Your Municipal Governance"
-            description="Schedule a consultation to explore how our specialized legal services can strengthen your local government's legal framework."
+            description="Schedule a consultation to strengthen your local government's legal framework."
             buttonText="Request Consultation"
             buttonLink="/contact"
           />
