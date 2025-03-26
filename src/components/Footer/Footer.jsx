@@ -27,10 +27,6 @@ const Footer = () => {
         <div className="footer-logo">
           <h3>Shane Hobbs Law Office</h3>
           <p className="tagline">EVERY CLIENT MATTERS</p>
-          <p className="address">
-            Law Office of Shane Hobbs, Masonic Building, 4 S. 2nd St., #303<br />
-            Pottsville, PA 17901
-          </p>
         </div>
         <div className="footer-links">
           <div className="footer-nav">
@@ -56,7 +52,7 @@ const Footer = () => {
           </div>
           <div className="footer-contact">
             <h4>Contact Information</h4>
-            <p><i className="fas fa-map-marker-alt"></i> Law Office of Shane Hobbs, Masonic Building, 4 S. 2nd St. #303, Pottsville, PA 17901</p>
+            <p><i className="fas fa-map-marker-alt"></i>Masonic Building, 4 S. 2nd St. #303, Pottsville, PA 17901</p>
             <p><i className="fas fa-phone"></i> (570) 628-2806 </p>
             <p><i className="fas fa-envelope"></i> info@shanehobbslawoffice.com</p>
           </div>
