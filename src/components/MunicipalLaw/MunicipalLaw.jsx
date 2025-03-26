@@ -48,7 +48,7 @@ const MunicipalLaw = () => {
           <h2>Our Municipal Law Expertise</h2>
           <p>
             We understand the critical importance of staying current with the latest federal and state 
-            legal developments. Our attorneys are actively engaged with professional municipal associations 
+            legal developments. Our trained staff are actively engaged with professional municipal associations 
             and regularly attend state and local seminars to ensure our clients receive the most up-to-date 
             and comprehensive legal guidance.
           </p>
@@ -79,7 +79,7 @@ const MunicipalLaw = () => {
         <section className="approach-section">
           <h2>Our Approach</h2>
           <p>
-            Municipal leaders require sound legal advice from attorneys who can anticipate and address 
+            Municipal leaders require sound legal advice from someone who can anticipate and address 
             today's complex challenges. We provide strategic counsel that supports local officials while 
             remaining fair to citizens and sensitive to community concerns. Our goal is to help your 
             municipality successfully serve its constituents with expert legal guidance.
