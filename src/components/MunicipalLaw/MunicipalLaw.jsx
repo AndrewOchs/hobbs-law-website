@@ -1,7 +1,7 @@
 import React from 'react';
 import './MunicipalLaw.css';
-import PageHero from '../PageHero/PageHero';
-import CtaBox from '../CtaBox/CtaBox';
+import PageHero from '../shared/PageHero/PageHero';
+import CtaBox from '../shared/CtaBox/CtaBox';
 
 const MunicipalLaw = () => {
   const municipalEntities = [
