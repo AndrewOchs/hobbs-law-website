@@ -27,12 +27,12 @@
   position: relative;
   z-index: 10;
   max-width: 800px;
-  width: 100%;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .hero-content h1 {
@@ -48,6 +48,8 @@
   margin-bottom: 40px;
   text-align: center;
   max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
 }
 

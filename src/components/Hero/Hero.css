@@ -1,7 +1,6 @@
 .hero {
   height: 80vh;
   background-color: #002244;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
   position: relative;
   display: flex;
   align-items: center;

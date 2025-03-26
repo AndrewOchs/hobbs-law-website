@@ -3,7 +3,15 @@ import './Hero.css';
 
 const Hero = () => {
   return (
-    <section id="home" className="hero">
+    <section 
+      id="home" 
+      className="hero"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/hero-background.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
       <div className="hero-overlay"></div>
       <div className="hero-content">
         <h1>Experienced Legal Counsel You Can Trust</h1>
