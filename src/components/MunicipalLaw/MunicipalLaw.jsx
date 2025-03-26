@@ -2,7 +2,7 @@ import React from 'react';
 import './MunicipalLaw.css';
 import PageHero from '../PageHero/PageHero';
 import ServiceItem from '../ServiceItem/ServiceItem';
-import BenefitItem from '../BenefitItem/BenefitItem.jsx';
+import BenefitItem from '../BenefitItem/BenefitItem';
 import ApproachStep from '../ApproachStep/ApproachStep';
 import ConsiderationItem from '../ConsiderationItem/ConsiderationItem';
 import CtaBox from '../CtaBox/CtaBox';

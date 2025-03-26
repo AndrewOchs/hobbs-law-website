@@ -12,3 +12,5 @@ const ApproachStep = ({ stepNumber, title, description }) => {
     </div>
   );
 };
+
+export default ApproachStep;
