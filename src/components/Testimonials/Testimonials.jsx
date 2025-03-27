@@ -4,7 +4,7 @@ import './Testimonials.css';
 const testimonials = [
   {
     id: 1,
-    text: "I have worked with Shane on several matter, he is constantly working and constantly on the go for his clients. You are in good hands with Mr. Hobbs.",
+    text: "I have worked with Shane on several matters, he is constantly working and constantly on the go for his clients. You are in good hands with Mr. Hobbs.",
     client: "Tim Brennan",
     rating: 5
   },
@@ -17,7 +17,7 @@ const testimonials = [
   {
     id: 3,
     text: "Has helped me in numerous pickles. Knows his stuff and hasn’t forgotten that not everyone can afford spending thousands of dollars for legal help. Great guy inside and out. I recommend him to anyone looking for legal help.",
-    client: "Ninja 1, Local Guide",
+    client: "Ninja l, Local Guide",
     rating: 5
   },
   {
