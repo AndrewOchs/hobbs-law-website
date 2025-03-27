@@ -6,6 +6,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('home');
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const location = useLocation();
@@ -16,7 +17,13 @@ const Navbar = () => {
     };
     
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      
+      // Close menu if transitioning from mobile to desktop
+      if (!mobile && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
     };
     
     window.addEventListener('scroll', handleScroll);
@@ -26,7 +33,7 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [isMenuOpen]);
   
   // Update active link based on current route
   useEffect(() => {
@@ -69,13 +76,32 @@ const Navbar = () => {
     };
   }, []);
 
-  const toggleDropdown = () => {
+  // Close dropdown when mobile menu is closed
+  useEffect(() => {
+    if (!isMenuOpen) {
+      setIsDropdownOpen(false);
+    }
+  }, [isMenuOpen]);
+
+  const toggleDropdown = (e) => {
+    e.stopPropagation();
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  // For the page anchor links - scrolls to section on home page
-  const handleAnchorClick = (sectionId) => {
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    // Always close dropdown when toggling menu
     setIsDropdownOpen(false);
+  };
+
+  // For the page anchor links - scrolls to section on home page
+  const handleAnchorClick = (e, sectionId) => {
+    e.preventDefault();
+    
+    // Close mobile menu after clicking a link
+    if (isMobile && isMenuOpen) {
+      setIsMenuOpen(false);
+    }
     
     // If already on home page, scroll to the section
     if (location.pathname === '/') {
@@ -90,17 +116,27 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isMobile ? 'mobile' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="logo">
           <Link to="/">
             <h1>Shane Hobbs Law Office</h1>
           </Link>
         </div>
-        <div className="nav-links">
+        
+        <button 
+          className="mobile-menu-btn" 
+          onClick={toggleMenu}
+          aria-label="Toggle mobile menu"
+        >
+          <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+        </button>
+        
+        <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <Link 
             to="/" 
             className={activeLink === 'home' ? 'active' : ''}
+            onClick={() => isMobile && setIsMenuOpen(false)}
           >
             Home
           </Link>
@@ -119,37 +155,55 @@ const Navbar = () => {
               <div className="dropdown-menu">
                 <Link 
                   to="/municipal-law"
-                  onClick={() => setIsDropdownOpen(false)}
+                  onClick={() => {
+                    setIsDropdownOpen(false);
+                    isMobile && setIsMenuOpen(false);
+                  }}
                 >
                   Municipal Law
                 </Link>
                 <Link 
                   to="/personal-injury"
-                  onClick={() => setIsDropdownOpen(false)}
+                  onClick={() => {
+                    setIsDropdownOpen(false);
+                    isMobile && setIsMenuOpen(false);
+                  }}
                 >
                   Personal Injury
                 </Link>
                 <Link 
                   to="/insurance-litigation"
-                  onClick={() => setIsDropdownOpen(false)}
+                  onClick={() => {
+                    setIsDropdownOpen(false);
+                    isMobile && setIsMenuOpen(false);
+                  }}
                 >
                   Insurance Litigation
                 </Link>
                 <Link 
                   to="/business-law"
-                  onClick={() => setIsDropdownOpen(false)}
+                  onClick={() => {
+                    setIsDropdownOpen(false);
+                    isMobile && setIsMenuOpen(false);
+                  }}
                 >
                   Business Law
                 </Link>
                 <Link 
                   to="/criminal-defense"
-                  onClick={() => setIsDropdownOpen(false)}
+                  onClick={() => {
+                    setIsDropdownOpen(false);
+                    isMobile && setIsMenuOpen(false);
+                  }}
                 >
                   Criminal Defense
                 </Link>
                 <Link 
                   to="/real-estate"
-                  onClick={() => setIsDropdownOpen(false)}
+                  onClick={() => {
+                    setIsDropdownOpen(false);
+                    isMobile && setIsMenuOpen(false);
+                  }}
                 >
                   Real Estate
                 </Link>
@@ -158,30 +212,21 @@ const Navbar = () => {
           </div>
           <a 
             href="#about" 
-            onClick={(e) => {
-              e.preventDefault();
-              handleAnchorClick('about');
-            }}
+            onClick={(e) => handleAnchorClick(e, 'about')}
             className={activeLink === 'about' ? 'active' : ''}
           >
             About
           </a>
           <a 
             href="#testimonials" 
-            onClick={(e) => {
-              e.preventDefault();
-              handleAnchorClick('testimonials');
-            }}
+            onClick={(e) => handleAnchorClick(e, 'testimonials')}
             className={activeLink === 'testimonials' ? 'active' : ''}
           >
             Testimonials
           </a>
           <a 
             href="#contact" 
-            onClick={(e) => {
-              e.preventDefault();
-              handleAnchorClick('contact');
-            }}
+            onClick={(e) => handleAnchorClick(e, 'contact')}
             className={activeLink === 'contact' ? 'active' : ''}
           >
             Contact

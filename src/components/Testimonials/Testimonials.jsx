@@ -4,26 +4,26 @@ import './Testimonials.css';
 const testimonials = [
   {
     id: 1,
-    text: "Shane Hobbs provided exceptional representation in my personal injury case. His knowledge of the law and dedication to my case made all the difference. He fought hard for fair compensation and delivered results beyond my expectations.",
-    client: "John D., Personal Injury Client",
+    text: "I have worked with Shane on several matters, he is constantly working and constantly on the go for his clients. You are in good hands with Mr. Hobbs.",
+    client: "Tim Brennan",
     rating: 5
   },
   {
     id: 2,
-    text: "I couldn't have asked for a better attorney for my business legal matters. Shane was professional, responsive, and made a complex process straightforward. His expertise in business law saved my company significant time and resources.",
-    client: "Maria S., Business Law Client",
+    text: "I gave him my husband‘s case and it was very hard but he nicely handed it. He’s service was excellent! Whenever I try talking to him he always replied nicely. He finished the case in a very short time! He is a very nice lawyer! I recommend him as a lawyer you can trust with your case!",
+    client: "Mital Patel",
     rating: 5
   },
   {
     id: 3,
-    text: "When facing criminal charges, I was overwhelmed with stress and uncertainty. Mr. Hobbs guided me through every step of the process with confidence and compassion, ultimately achieving a dismissal of all charges against me.",
-    client: "Thomas R., Criminal Defense Client",
+    text: "Has helped me in numerous pickles. Knows his stuff and hasn’t forgotten that not everyone can afford spending thousands of dollars for legal help. Great guy inside and out. I recommend him to anyone looking for legal help.",
+    client: "Ninja l, Local Guide",
     rating: 5
   },
   {
     id: 4,
-    text: "Shane's expertise in real estate law was invaluable during our home purchase. He identified several potential issues in the contract that we had overlooked and ensured our interests were protected throughout the transaction.",
-    client: "Jennifer K., Real Estate Client",
+    text: "Great communication, highly recommend",
+    client: "The Konrad Group",
     rating: 5
   }
 ];
