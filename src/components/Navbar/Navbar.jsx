@@ -76,15 +76,22 @@ const Navbar = () => {
     };
   }, []);
 
-  const toggleDropdown = () => {
+  // Close dropdown when mobile menu is closed
+  useEffect(() => {
+    if (!isMenuOpen) {
+      setIsDropdownOpen(false);
+    }
+  }, [isMenuOpen]);
+
+  const toggleDropdown = (e) => {
+    e.stopPropagation();
     setIsDropdownOpen(!isDropdownOpen);
   };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    if (isDropdownOpen) {
-      setIsDropdownOpen(false);
-    }
+    // Always close dropdown when toggling menu
+    setIsDropdownOpen(false);
   };
 
   // For the page anchor links - scrolls to section on home page
@@ -144,7 +151,7 @@ const Navbar = () => {
               <span>Practice Areas</span>
               <span className="dropdown-arrow">▼</span>
             </div>
-            {(isDropdownOpen || (isMobile && isMenuOpen)) && (
+            {isDropdownOpen && (
               <div className="dropdown-menu">
                 <Link 
                   to="/municipal-law"
