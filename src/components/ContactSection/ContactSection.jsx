@@ -1,35 +1,35 @@
-import React, { useState } from 'react';
-import './ContactSection.css';
+import React, { useState } from "react";
+import "./ContactSection.css";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    caseType: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    caseType: "",
+    message: "",
   });
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Form submission logic would go here
     console.log(formData);
     // Reset form after submission
     setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      caseType: '',
-      message: ''
+      name: "",
+      email: "",
+      phone: "",
+      caseType: "",
+      message: "",
     });
-    alert('Thank you for contacting us. We will get back to you shortly.');
+    alert("Thank you for contacting us. We will get back to you shortly.");
   };
-  
+
   return (
     <section id="contact" className="contact-section">
       <div className="section-header">
@@ -60,7 +60,7 @@ const ContactSection = () => {
               <i className="fas fa-envelope"></i>
               <div>
                 <h3>Email</h3>
-                <p>info@shanehobbslawoffice.com</p>
+                <p>shane@shanehobbslawoffice.com</p>
               </div>
             </div>
             <div className="info-item">
@@ -72,13 +72,13 @@ const ContactSection = () => {
             </div>
           </div>
           <div className="map-container">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48373.66047448976!2d-76.22271517541196!3d40.68598287216193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c5db6dbe3d5883%3A0xa9d9e8a1eda138f3!2sPottsville%2C%20PA!5e0!3m2!1sen!2sus!4v1716661324196!5m2!1sen!2sus" 
-              width="100%" 
-              height="300" 
-              style={{border:0, borderRadius: '8px'}} 
-              allowFullScreen="" 
-              loading="lazy" 
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48373.66047448976!2d-76.22271517541196!3d40.68598287216193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c5db6dbe3d5883%3A0xa9d9e8a1eda138f3!2sPottsville%2C%20PA!5e0!3m2!1sen!2sus!4v1716661324196!5m2!1sen!2sus"
+              width="100%"
+              height="300"
+              style={{ border: 0, borderRadius: "8px" }}
+              allowFullScreen=""
+              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Office Location"
             ></iframe>
@@ -151,10 +151,13 @@ const ContactSection = () => {
             </div>
             <div className="form-group">
               <p className="confidentiality-note">
-                * All consultations are confidential and protected by attorney-client privilege.
+                * All consultations are confidential and protected by
+                attorney-client privilege.
               </p>
             </div>
-            <button type="submit" className="submit-btn">Submit Request</button>
+            <button type="submit" className="submit-btn">
+              Submit Request
+            </button>
           </form>
         </div>
       </div>
