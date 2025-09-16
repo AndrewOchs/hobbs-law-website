@@ -9,21 +9,21 @@ const ContactSection = () => {
     caseType: '',
     message: ''
   });
-  
+
   const [submitStatus, setSubmitStatus] = useState({
     submitting: false,
     submitted: false,
     error: null
   });
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Form validation
     if (!formData.name || !formData.email || !formData.message) {
       setSubmitStatus({
@@ -33,13 +33,13 @@ const ContactSection = () => {
       });
       return;
     }
-    
+
     setSubmitStatus({
       submitting: true,
       submitted: false,
       error: null
     });
-    
+
     try {
       // Replace 'xaybzepkv' with your actual Formspree form ID
       const response = await fetch('https://formspree.io/f/mdkejjlv', {
@@ -50,18 +50,18 @@ const ContactSection = () => {
           'Content-Type': 'application/json'
         }
       });
-      
+
       if (!response.ok) {
         throw new Error('Form submission failed');
       }
-      
+
       // Success
       setSubmitStatus({
         submitting: false,
         submitted: true,
         error: null
       });
-      
+
       // Reset form after successful submission
       setFormData({
         name: '',
@@ -70,7 +70,7 @@ const ContactSection = () => {
         caseType: '',
         message: ''
       });
-      
+
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitStatus({
@@ -80,7 +80,7 @@ const ContactSection = () => {
       });
     }
   };
-  
+
   return (
     <section id="contact" className="contact-section">
       <div className="section-header">
@@ -95,8 +95,8 @@ const ContactSection = () => {
               <div>
                 <h3>Office Address</h3>
                 <p>Law Office of Shane Hobbs</p>
-                <p>Masonic Building</p>
-                <p>4 S. 2nd St., #303</p>
+                <p>118 S. 2nd Street</p>
+                <p>Suite 103</p>
                 <p>Pottsville, PA 17901</p>
               </div>
             </div>
@@ -123,13 +123,13 @@ const ContactSection = () => {
             </div>
           </div>
           <div className="map-container">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48373.66047448976!2d-76.22271517541196!3d40.68598287216193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c5db6dbe3d5883%3A0xa9d9e8a1eda138f3!2sPottsville%2C%20PA!5e0!3m2!1sen!2sus!4v1716661324196!5m2!1sen!2sus" 
-              width="100%" 
-              height="300" 
-              style={{border:0, borderRadius: '8px'}} 
-              allowFullScreen="" 
-              loading="lazy" 
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48373.66047448976!2d-76.22271517541196!3d40.68598287216193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c5db6dbe3d5883%3A0xa9d9e8a1eda138f3!2sPottsville%2C%20PA!5e0!3m2!1sen!2sus!4v1716661324196!5m2!1sen!2sus"
+              width="100%"
+              height="300"
+              style={{ border: 0, borderRadius: '8px' }}
+              allowFullScreen=""
+              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Office Location"
             ></iframe>
@@ -232,9 +232,9 @@ const ContactSection = () => {
                   * All consultations are confidential and protected by attorney-client privilege.
                 </p>
               </div>
-              <button 
-                type="submit" 
-                className="submit-btn" 
+              <button
+                type="submit"
+                className="submit-btn"
                 disabled={submitStatus.submitting}
               >
                 {submitStatus.submitting ? 'Submitting...' : 'Submit Request'}
