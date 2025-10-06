@@ -81,10 +81,6 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <p>&copy; {currentYear} Shane Hobbs Law Office. All Rights Reserved.</p>
-        <p>
-          <Link to="/privacy-policy">Privacy Policy</Link> |
-          <Link to="/terms-of-service">Terms of Service</Link>
-        </p>
       </div>
     </footer>
   );

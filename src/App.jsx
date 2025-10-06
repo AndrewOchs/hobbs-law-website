@@ -10,6 +10,7 @@ import "./App.css";
 // Components
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Sections for routing
 import Hero from "./components/Hero/Hero";
@@ -69,6 +70,7 @@ const HomePage = () => (
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <ScrollToHashElement />
       <div className="app">
         <Navbar />
