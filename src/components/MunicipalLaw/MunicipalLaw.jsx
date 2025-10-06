@@ -1,5 +1,5 @@
 import React from 'react';
-import './PracticeAreaPage.css';
+import '../shared/PracticeAreaPage.css';
 import PageHero from '../shared/PageHero/PageHero';
 import CtaBox from '../shared/CtaBox/CtaBox';
 
