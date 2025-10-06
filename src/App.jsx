@@ -18,7 +18,14 @@ import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 import AttorneyProfile from "./components/AttorneyProfile/AttorneyProfile";
 import Testimonials from "./components/Testimonials/Testimonials";
 import ContactSection from "./components/ContactSection/ContactSection";
+
+// Practice Area Pages
 import MunicipalLaw from "./components/MunicipalLaw/MunicipalLaw";
+import PersonalInjury from "./components/PersonalInjury/PersonalInjury";
+import InsuranceLitigation from "./components/InsuranceLitigation/InsuranceLitigation";
+import BusinessLaw from "./components/BusinessLaw/BusinessLaw";
+import CriminalDefense from "./components/CriminalDefense/CriminalDefense";
+import RealEstate from "./components/RealEstate/RealEstate";
 
 // Function to handle hash navigation
 const ScrollToHashElement = () => {
@@ -48,47 +55,6 @@ const ScrollToHashElement = () => {
   return null;
 };
 
-// Create placeholder components for other practice areas
-const PracticePlaceholder = ({ title }) => (
-  <div
-    style={{
-      minHeight: "70vh",
-      maxWidth: "800px",
-      margin: "0 auto",
-      padding: "120px 20px 40px 20px", // Increased top padding to account for navbar
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-    }}
-  >
-    <h1 style={{ color: "#003366", marginBottom: "20px" }}>{title}</h1>
-    <p style={{ fontSize: "1.1rem", lineHeight: "1.6", marginBottom: "20px" }}>
-      This page is currently in development. Please check back soon for detailed
-      information about our {title.toLowerCase()} services.
-    </p>
-    <p style={{ fontSize: "1.1rem", lineHeight: "1.6", marginBottom: "30px" }}>
-      For immediate assistance or to schedule a consultation regarding{" "}
-      {title.toLowerCase()}, please contact our office.
-    </p>
-    <div>
-      <a
-        href="/#contact"
-        style={{
-          padding: "12px 25px",
-          background: "#003366",
-          color: "white",
-          textDecoration: "none",
-          borderRadius: "4px",
-          fontWeight: "600",
-          display: "inline-block",
-        }}
-      >
-        Contact Us
-      </a>
-    </div>
-  </div>
-);
-
 const HomePage = () => (
   <>
     <Hero />
@@ -109,27 +75,11 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/municipal-law" element={<MunicipalLaw />} />
-          <Route
-            path="/personal-injury"
-            element={<PracticePlaceholder title="Personal Injury" />}
-          />
-          <Route
-            path="/insurance-litigation"
-            element={<PracticePlaceholder title="Insurance Litigation" />}
-          />
-          <Route
-            path="/business-law"
-            element={<PracticePlaceholder title="Business Law" />}
-          />
-          <Route
-            path="/criminal-defense"
-            element={<PracticePlaceholder title="Criminal Defense" />}
-          />
-          <Route
-            path="/real-estate"
-            element={<PracticePlaceholder title="Real Estate" />}
-          />
-          {/* No separate route for contact page */}
+          <Route path="/personal-injury" element={<PersonalInjury />} />
+          <Route path="/insurance-litigation" element={<InsuranceLitigation />} />
+          <Route path="/business-law" element={<BusinessLaw />} />
+          <Route path="/criminal-defense" element={<CriminalDefense />} />
+          <Route path="/real-estate" element={<RealEstate />} />
         </Routes>
         <Footer />
       </div>

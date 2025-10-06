@@ -1,13 +1,13 @@
 import React from 'react';
-import './MunicipalLaw.css';
+import './PracticeAreaPage.css';
 import PageHero from '../shared/PageHero/PageHero';
 import CtaBox from '../shared/CtaBox/CtaBox';
 
 const MunicipalLaw = () => {
   const municipalEntities = [
-    'Authorities', 
-    'Boroughs', 
-    'Townships', 
+    'Authorities',
+    'Boroughs',
+    'Townships',
     'Zoning Hearing Boards'
   ];
 
@@ -27,38 +27,38 @@ const MunicipalLaw = () => {
   ];
 
   return (
-    <div className="municipal-law-page">
+    <div className="practice-area-page">
       <PageHero
         title="Municipal Law"
         subtitle="Comprehensive Legal Counsel for Local Governments"
         backgroundImage="/courthouse_img.jpg"
       />
 
-      <div className="container municipal-law-content">
+      <div className="container practice-area-content">
         <section className="intro-section">
           <h2>Navigating Complex Legal Issues for Municipalities</h2>
           <p>
-            With years of dedicated experience, Shane Hobbs Law Office has been a trusted legal partner 
-            for local government entities. Our municipal law practice is designed to provide thorough 
+            With years of dedicated experience, Shane Hobbs Law Office has been a trusted legal partner
+            for local government entities. My municipal law practice is designed to provide thorough
             and practical legal advice to public officials facing diverse governmental challenges.
           </p>
         </section>
 
         <section className="expertise-section">
-          <h2>Our Municipal Law Expertise</h2>
+          <h2>Municipal Law Expertise</h2>
           <p>
-            We understand the critical importance of staying current with the latest federal and state 
-            legal developments. Our trained staff are actively engaged with professional municipal associations 
-            and regularly attend state and local seminars to ensure our clients receive the most up-to-date 
+            I understand the critical importance of staying current with the latest federal and state
+            legal developments. Through active engagement with professional municipal associations
+            and regular attendance at state and local seminars, I ensure my clients receive the most up-to-date
             and comprehensive legal guidance.
           </p>
         </section>
 
-        <section className="entities-section">
-          <h2>Municipalities We Serve</h2>
-          <div className="entities-grid">
+        <section className="types-section">
+          <h2>Municipalities I Serve</h2>
+          <div className="items-grid">
             {municipalEntities.map((entity, index) => (
-              <div key={index} className="entity-item">
+              <div key={index} className="grid-item">
                 {entity}
               </div>
             ))}
@@ -67,9 +67,9 @@ const MunicipalLaw = () => {
 
         <section className="services-section">
           <h2>Municipal Law Services</h2>
-          <div className="services-grid">
+          <div className="items-grid">
             {municipalServices.map((service, index) => (
-              <div key={index} className="service-item">
+              <div key={index} className="grid-item">
                 {service}
               </div>
             ))}
@@ -77,11 +77,11 @@ const MunicipalLaw = () => {
         </section>
 
         <section className="approach-section">
-          <h2>Our Approach</h2>
+          <h2>My Approach</h2>
           <p>
-            Municipal leaders require sound legal advice from someone who can anticipate and address 
-            today's complex challenges. We provide strategic counsel that supports local officials while 
-            remaining fair to citizens and sensitive to community concerns. Our goal is to help your 
+            Municipal leaders require sound legal advice from someone who can anticipate and address
+            today's complex challenges. I provide strategic counsel that supports local officials while
+            remaining fair to citizens and sensitive to community concerns. My goal is to help your
             municipality successfully serve its constituents with expert legal guidance.
           </p>
         </section>
